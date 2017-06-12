@@ -1,0 +1,45 @@
+.wrap {
+    text-align: center;
+}
+.wrap img{
+    display: inline-block;
+}
+.music{
+	text-align: center;
+}
+div img {
+	margin: 5px;
+  	vertical-align : middle;
+}
+h1{
+	font-size: 48px;
+	color:white;
+	font:Tahoma;
+	font-weight: bold;
+	text-shadow: 2px 2px 2px blue;
+	text-align: center;
+}
+#pic{
+	text-align: center;
+}
+a{
+	 text-decoration:none;
+}
+.show p{
+	font-size: 36px;
+	color:white;
+	font:Tahoma;
+	font-weight: bold;
+	text-shadow: 2px 2px 2px black;
+	text-align: center;
+	margin: 20px;
+}
+p{
+	font-size: 36px;
+	color:white;
+	font:Tahoma;
+	font-weight: bold;
+	text-shadow: 2px 2px 2px black;
+	text-align: center;
+	margin: 20px;
+}

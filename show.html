@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Photo Gallery</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+	<script src="jquery.js"></script>	
+	<style>
+			body{
+				background:#333 url(img/9.jpg) repeat top left;
+				font-family:Arial;
+				background-size: cover;
+			}
+	</style>		
+	<script src="jquery.js"></script>
+</head>
+<body>
+<h1>Gallery of Galaxy </h1>
+
+<div>
+<div class="wrap">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(1)" src="img/1.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(2)" src="img/2.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(3)" src="img/3.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(4)" src="img/4.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(5)" src="img/5.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(6)" src="img/6.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(7)" src="img/7.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(8)" src="img/8.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(9)" src="img/9.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(10)" src="img/10.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(11)" src="img/11.jpg" border="1" width="100" height="75">
+</div>
+<div class="wrap">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(12)" src="img/12.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(13)" src="img/13.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(14)" src="img/14.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(15)" src="img/15.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(16)" src="img/16.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(17)" src="img/17.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(18)" src="img/18.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(19)" src="img/19.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(20)" src="img/20.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(21)" src="img/21.jpg" border="1" width="100" height="75">
+<img onmouseover="a(this)" onmouseout="b(this)" onclick="c(22)" src="img/22.jpg" border="1" width="100" height="75">
+</div>
+
+<p id="pic"></p>
+<div class="next">
+<input type="button" name="下一張" value=" " onclick="next_pic();" id="next1">
+<input type="button" name="start" value=" " onclick="set();" style.visibility="visible" id="control">
+<input type="button" name="stop" value=" " onclick="stop()" style.display="block" id="stop">
+
+<input type="button" name="上一張" value=" " onclick="last_pic();" id="last1">
+
+<p>點擊大圖下載</p>
+<p>背景音樂 請自行撥放</p>
+</div>
+<div class="music">		
+	<audio src="res/music1.mp3" controls loop>
+</div>
+<div class="music">		
+	<audio src="res/music2.mp3" controls loop>
+</div>
+<div class="music">		
+	<audio src="res/music3.mp3" controls loop>
+</div>
+<!-- </div> -->
+<script type="text/javascript" >
+var RayPic = new Array("img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg","img/6.jpg","img/7.jpg","img/8.jpg","img/9.jpg","img/10.jpg","img/11.jpg","img/12.jpg","img/13.jpg","img/14.jpg","img/15.jpg","img/16.jpg","img/17.jpg","img/18.jpg","img/19.jpg","img/20.jpg","img/21.jpg","img/22.jpg");
+        var RayPic_len = RayPic.length;        
+        var i=0;
+        var refresh;
+        var _control = document.getElementById("control"); 
+        document.getElementById("pic").innerHTML  ="<a href='"+RayPic[i]+"'download='"+RayPic[i]+"'><img src='"+RayPic[i]+"' width=1024 height=768 border=\"5\"></a>"
+        function set(){                               
+        	refresh=setInterval("run_pic()",2000);
+        	_control.style.visibility="hidden"; 
+    	}
+    	function stop(){                               
+        	 
+        	clearInterval(refresh);
+        	_control.style.visibility="visible"; 
+    	}
+        function run_pic(){
+        	i++;
+            if(i>=RayPic_len)  i=0;                 
+              document.getElementById("pic").innerHTML  ="<a href='"+RayPic[i]+"'download='"+RayPic[i]+"'><img src='"+RayPic[i]+"' width=1024 height=768 border=\"5\"></a>"  
+        }
+        function last_pic(){
+        	i++;
+            if(i>=RayPic_len)  i=0;       
+             document.getElementById("pic").innerHTML  ="<a href='"+RayPic[i]+"'download='"+RayPic[i]+"'><img src='"+RayPic[i]+"' width=1024 height=768 border=\"5\"></a>"    
+        }
+        function next_pic(){
+        	i--;
+        	if(i<0)  i=21;
+            document.getElementById("pic").innerHTML  ="<a href='"+RayPic[i]+"'download='"+RayPic[i]+"'><img src='"+RayPic[i]+"' width=1024 height=768 border=\"5\"></a>"                                        
+        }
+        function download(){
+
+        }
+	function a(x){
+		x.border="5px";
+	}
+	function b(x){
+		x.border="0px";
+	}
+	
+</script>
+</body>
+</html>
